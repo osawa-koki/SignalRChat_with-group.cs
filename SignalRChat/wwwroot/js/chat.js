@@ -33,7 +33,6 @@ document.getElementById("sendButton").addEventListener("click", function (event)
 document.getElementById("join").addEventListener("click", function () {
     var room = document.getElementById("room").value;
     document.getElementById("nowin").textContent = room;
-    console.log(room);
     connection.invoke("JoinRoom", room).catch(function (err) {
         return console.error(err.toString());
     });
