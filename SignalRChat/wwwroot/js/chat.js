@@ -23,7 +23,18 @@ connection.start().then(function () {
 document.getElementById("sendButton").addEventListener("click", function (event) {
     var user = document.getElementById("userInput").value;
     var message = document.getElementById("messageInput").value;
-    connection.invoke("SendMessage", user, message).catch(function (err) {
+    var room = document.getElementById("room").value;
+    connection.invoke("SendMessage", user, message, room).catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+});
+
+document.getElementById("join").addEventListener("click", function () {
+    var room = document.getElementById("room").value;
+    document.getElementById("nowin").textContent = room;
+    console.log(room);
+    connection.invoke("JoinRoom", room).catch(function (err) {
         return console.error(err.toString());
     });
     event.preventDefault();
