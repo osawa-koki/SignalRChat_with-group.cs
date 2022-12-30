@@ -8,10 +8,10 @@ SignalR(ASP.NET)のマイクロソフト公式チュートリアルに作成し�
 
 ```shell
 docker build -t signalr-group-chat .
-docker run -p 80:80 -it --rm --name my-signalr-group-chat signalr-group-chat
+docker run -p 80:7777 -it --rm --name my-signalr-group-chat signalr-group-chat
 
 # 一行で書くなら、、、
-docker build -t signalr-group-chat . && docker run -p 80:80 -it --rm --name my-signalr-group-chat signalr-group-chat
+docker build -t signalr-group-chat . && docker run -p 80:7777 -it --rm --name my-signalr-group-chat signalr-group-chat
 ```
 
 ## 開発環境
