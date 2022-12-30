@@ -4,6 +4,16 @@ SignalR(ASP.NET)のマイクロソフト公式チュートリアルに作成し�
 
 ![サンプル画像](./dev/data/sample.gif)  
 
+## 実行方法
+
+```shell
+docker build -t signalr-group-chat .
+docker run -p 80:80 -it --rm --name my-signalr-group-chat signalr-group-chat
+
+# 一行で書くなら、、、
+docker build -t signalr-group-chat . && docker run -p 80:80 -it --rm --name my-signalr-group-chat signalr-group-chat
+```
+
 ## 開発環境
 
 | 機能 | バージョン |
