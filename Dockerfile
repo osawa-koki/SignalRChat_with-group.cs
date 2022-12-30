@@ -6,11 +6,10 @@ EXPOSE 7777
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ./SignalRChat/SignalRChat.csproj ./SignalRChat
-RUN dotnet restore ./SignalRChat/SignalRChat.csproj
+COPY ./SignalRChat/SignalRChat.csproj .
+RUN dotnet restore ./SignalRChat.csproj
 COPY ./SignalRChat .
-WORKDIR /src/SignalRChat
-RUN dotnet build SignalRChat.csproj -c Release -o /app/build
+RUN dotnet build ./SignalRChat.csproj -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish SignalRChat.csproj -c Release -o /app/publish /p:UseAppHost=false
