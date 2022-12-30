@@ -23,6 +23,19 @@ docker build -t signalr-group-chat . && docker run -p 80:7777 -it --rm --name my
 | .NET | 6.0 |
 | C# | .NET依存 |
 
+## デプロイ設定(Render.com)
+
+| キー | バリュー |
+| ---- | ---- |
+| Name | signalr-groupchat |
+| Region | Oregon(US West) |
+| Branch | main |
+| Root Directory |  |
+| Environment | Docker |
+| Dockerfile Path | ./Dockerfile |
+| Docker Build Context Directory |  |
+| Docker Command |  |
+
 ## 参考資料(目を通しておきたい資料)
 
 - [対象チュートリアル](https://learn.microsoft.com/ja-jp/aspnet/core/tutorials/signalr?view=aspnetcore-6.0&tabs=visual-studio)
